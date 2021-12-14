@@ -51,6 +51,17 @@ function areaCirculo (radio) {
 };
 console.groupEnd();
 
+// Altura de un triángulo isósceles -> dos lados con la misma longitud
+// La altura es la raíz cuadrada del lado a al cuadrado menos el lado b al cuadrado, sobre cuatro
+function alturaIsosceles(lado1, lado2, base) {
+    if (lado1 === lado2 && lado2 != base) {
+        alert("Es un triángulo Isósceles");
+        const altura = Math.sqrt(lado1**2 - base**2 / 4);
+        console.log(altura);
+    } else {
+        alert("NO es un triángulo Isósceles")
+    }
+}
 
 // Aquí interactuamos con el HTML
 function calcularPerimetroCuadrado() {
