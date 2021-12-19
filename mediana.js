@@ -10,34 +10,47 @@ function calcularMediaAritmetica(lista) {
     return promedioLista;
 };
 
+let mediana;
 
-const lista1 = [
-    100,
-    200,
-    500,
-    400000000
-];
-
-const mitadLista1 = parseInt(lista1.length / 2);
-
-function esPar(numero) {
-    if (numero % 2 == 0) {
+function esPar(lista) {
+    if (lista.length % 2 == 0) {
         return true;
     } else {
         return false;
     }
-}
+};
 
-let mediana;
+function calculoMediana(lista) {
+    lista.sort((a,b) => a - b);
 
-if (esPar(lista1.length)) {
-    const elem1 = lista1[mitadLista1 - 1];
-    const elem2 = lista1[mitadLista1];
-    const promedioelem1y2 = calcularMediaAritmetica([
-        elem1,
-        elem2
-    ]);
-    mediana = promedioelem1y2;
-} else {
-    mediana = lista1[mitadLista1];
-}
+    const mitadLista = parseInt(lista.length / 2);
+
+    if (esPar(lista.length)) {
+        const elem1 = lista[mitadLista - 1];
+        const elem2 = lista[mitadLista];
+        const promedioelem1y2 = calcularMediaAritmetica([
+            elem1,
+            elem2
+        ]);
+        mediana = promedioelem1y2;
+    } else {
+        mediana = lista[mitadLista];
+    };
+
+    return mediana;
+};
+
+
+
+
+// const lista1 = [
+    //     100,
+    //     200,
+//     500,
+//     400000000
+// ];
+
+// const sortList = (lista) => {
+//     lista.sort((a, b) => a - b);
+//     return lista;
+// }
